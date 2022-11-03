@@ -10,6 +10,7 @@
     <!-- custom style -->
     <link rel="stylesheet" href="./style.css">
     <title>Online Jewel Shop</title>
+   
 </head>
 <body>
      <!-- nav bar -->
@@ -49,7 +50,7 @@
                       aria-expanded="false">
                       Login
                   </button>
-                  <div class="dropdown-menu">
+                  <div class="dropdown-menu dropdown-menu-right">
                       <a href="./login.html" class="dropdown-item" type="button">Customer Login</a>
                       <a href="./business_login.html" class="dropdown-item" type="button">Business Login</a>
                   </div>
@@ -74,8 +75,11 @@
                       <label for="InputUserPassword">Password</label>
                       <input type="password" class="form-control" id="InputUserPassword">
                     </div>
-                   <p><a href="./register.html">SignUp / Register</a></p>
-                   <p><a href="./forgot-password.html">Forgot Password?</a></p>
+                    <div class="d-flex justify-content-between">
+                        <p><a href="./register.html">SignUp / Register</a></p>
+                        <p><a href="./forgot-password.html">Forgot Password?</a></p>
+
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
             </div>
