@@ -61,16 +61,27 @@
             <!-- left side input form -->
             <div class="col-md-6">
                 <h2 class="text-center">Customer Register</h2>
-                <form action=""  method="get" id="registerForm">
+                <form onsubmit="customerRegister(event)"  method="post" id="registerForm">
                         <div class="form-group">
-                            <label for="name">Name </label>
-                            <input type="text" class="form-control" id="name" placeholder="Name / User name"
-                                value="">
+                            <label for="customerName">Name </label>
+                            <input type="text" class="form-control" id="customerName" placeholder="Name / User name"
+                                value="" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email Id</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <label for="customerEmail">Email Id</label>
+                            <input type="email" class="form-control" id="customerEmail" placeholder="Email" required>
+                        </div>
+                        <!-- password -->
+                        <div class="form-row">
+                            <div class="form-group col-6">
+                                <label for="customerPassword">Password</label>
+                                <input type="password" class="form-control" id="customerPassword">
+                            </div>
+                            <div class="form-group col-6">
+                                <label for="customerConfirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="customerConfirmPassword">
+                            </div>
                         </div>
                     <!-- gender -->
                     <div class="form-group">
@@ -92,37 +103,37 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-6">
-                            <label for="inputAddress">Phone Number</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="+91-1234567890">
+                            <label for="customerPhone">Phone Number</label>
+                            <input type="text" class="form-control" id="customerPhone" placeholder="+91-1234567890">
                         </div>
                         <div class="form-group col-6">
-                            <label for="inputAddress">Aadhaar Number / PAN number</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="0000-0000-0000-0000">
+                            <label for="customerAadhaarPan">Aadhaar / PAN number</label>
+                            <input type="text" class="form-control" id="customerAadhaarPan" placeholder="0000-0000-0000-0000">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <label for="customerAddress">Address</label>
+                        <input type="text" class="form-control" id="customerAddress" placeholder="1234 Main St">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <label for="customerCity">City</label>
+                            <input type="text" class="form-control" id="customerCity">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPin">Pincode</label>
-                            <input type="text" class="form-control" id="inputPin">
+                            <label for="customerAddPin">Pincode</label>
+                            <input type="text" class="form-control" id="customerAddPin">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputState">State</label>
-                            <input type="text" class="form-control" name="state" id="inputState">
+                            <label for="customerState">State</label>
+                            <input type="text" class="form-control" name="state" id="customerState">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputCountry">Country</label>
-                            <select id="inputCountry" class="form-control">
+                            <label for="customerCountry">Country</label>
+                            <select id="customerCountry" class="form-control">
                                 <option selected>Choose...</option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Albania">Albania</option>
@@ -380,7 +391,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <!-- script  -->
-    <script src="./script.js"></script>
+    <script src="./customerRegister.js"></script>
 </body>
 
 </html>

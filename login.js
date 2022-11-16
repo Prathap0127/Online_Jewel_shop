@@ -8,6 +8,10 @@ function loginUser(event){
     if(userEmail=="user@user.com"&&userPassword=="12345678"){
         window.location="c-dashboard-product.html"
     }
+    else if(userEmail=="admin"&&userPassword=="admin123"){
+        window.location="admin-dashboard.html"
+
+    }
     else{
         form.reset()
         alert("User name or password is invalid")

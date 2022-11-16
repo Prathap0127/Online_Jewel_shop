@@ -13,6 +13,30 @@
     padding: 30px 40px 30px 40px;
   }
 
+  .card>img{
+    width: 200px;
+    height: 180px;
+  }
+
+  .card>span>i{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: flex;
+    color: rgb(205, 205, 205);
+    border: 1px rgb(205, 205, 205) solid; 
+    align-items: center;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    font-size: large;
+    border-radius: 50%;
+  }
+  .fav{
+    color: rgb(255, 0, 0);
+    border: 1px rgb(255, 0, 0) solid;
+  }
+
 
   /* testimonial */
   #testimonial{

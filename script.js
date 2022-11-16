@@ -108,5 +108,46 @@ function deleteProduct(id){
         document.getElementById("Product"+id).remove()
     }
 }
+function favIconColor(){
+    var favIcon=document.getElementById('favIcon1')
+    if(true){
+        favIcon.style.color="red";
+    }
+    else{
+        favIcon.style.color="white";
+    }
+}
 
 
+// product in customer page
+
+// var displayProductDiv=document.getElementById('displayProduct')
+// function displayProduct(){
+//     id=0;
+//     var disProductDiv = document.createElement('div')
+//     disProductDiv.classList.add("card", "text-center", "m-3")
+//     disProductDiv.style.width = "12rem"
+//     disProductDiv.id="Product"+id;
+//     console.log(disProductDiv.id)
+//     disProductDiv.innerHTML = `
+//             <img src="${productURL.value}" id="productImg${id}" class="card-img-top" alt="${productName.value}">
+//                 <div class="card-body">
+//                     <h5 id="productName${id}" class="card-title">${productName.value}</h5>
+//                         <div class="d-flex justify-content-between">
+//                             <p id="productPrice${id}" class="card-text">Rs.${productPrice.value}</p>
+//                             <p class="card-text float-right"><small class="text-muted"><s id="productActualPrice${id}">Rs.${productActualPrice.value}</s>
+//                                         </small></p>
+//                                         <input type="hidden" id="productMaterial${id}" value="${productMaterial.value}">   
+//                                         <input type="hidden" id="productCategory${id}" value="${productCategory.value}">   
+//                         </div>
+//                   <button href="#" class="btn btn-outline-warning mb-1">Buy now</button> <br>
+//                   <a class="btn btn-outline-success" onclick="updateProduct(${id})" title="edit the Price"><i class="fa-solid fa-pen"></i></a>
+//                   <a class="btn btn-outline-success" onclick="saveProduct(${id})" title="Update the Price"><i class="fa-solid fa-pen-to-square"></i></a>
+//                   <a class="btn btn-outline-danger" onclick="deleteProduct(${id})" title="To Delete Product"><i class="fa-solid fa-xmark"></i></a>
+//                 </div>
+// `
+//     displayProductDiv.append(disProductDiv)
+//     id++
+
+// }
+// displayProduct()

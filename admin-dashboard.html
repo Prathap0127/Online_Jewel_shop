@@ -65,19 +65,36 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-action active">Product</li>
+                    <li class="list-group-item list-group-item-action active">Registered Customer</li>
                     <a href="b-dashboard-product-add-product.html">
-                        <li class="list-group-item list-group-item-action">Cart</li>
+                        <li class="list-group-item list-group-item-action">Add Product</li>
                     </a>
                     <li class="list-group-item list-group-item-action">Profile</li>
                     <li class="list-group-item list-group-item-action">Account</li>
                 </ul>
             </div>
             <div class="col-md-9">
-                <h2 class="text-center">Products</h2>
-                <div class="row justify-content-sm-around" id="cProduct">
-                    
-                </div>
+                <h2 class="text-center">Registered Customer</h2>
+                <!-- table data -->
+                <table class="table table-responsive" id="customer_data">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Aadhaar / PAN</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                </table>
 
             </div>
         </div>
@@ -94,7 +111,7 @@
         crossorigin="anonymous"></script>
     <!-- script  -->
     <script src="./script.js"></script>
-    <script src="./diplay-cart.js"></script>
+    <script src="./customerRegister.js"></script>
 </body>
 
 </html>
