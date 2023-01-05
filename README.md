@@ -2,10 +2,10 @@
 
 user ID for customer
 
-Email: user@user.com
+Email: prathap@gmail.com
 Password: 12345678
 
 userId for business login
 
-Email: business@user.com
+Email: asn@gmail.com
 password: 12345678
