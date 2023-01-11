@@ -3,7 +3,7 @@
 user ID for customer
 
 Email: prathap@gmail.com
-Password: 12345678
+Password: prathap
 
 userId for business login
 
