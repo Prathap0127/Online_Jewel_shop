@@ -13,7 +13,7 @@
     <title>Online Jewel Shop</title>
 </head>
 
-<body>
+<body onload="onloadPage()">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Jewel Shop</a>
@@ -27,34 +27,24 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                        aria-expanded="false">
-                        Product
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="b-dashboard-product-add-product.html">Add Product</a>
-                        <a class="dropdown-item" href="b-dashboard-product.html">Product List</a>
-                        <!-- <div class="dropdown-divider"></div> -->
-                        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Product</a>
                 </li>
+              
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                 </li>
 
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search"  id="search" placeholder="Search" aria-label="Search">
                 <div class="dropdown">
-                    <a class="btn btn-secondary" type="button" href="index.html" aria-expanded="false">
-                        Logout
-                    </a>
-                    <!-- <div class="dropdown-menu">
-                        <a href="./login.html" class="dropdown-item" type="button">Customer Login</a>
-                        <a href="./business_login.html" class="dropdown-item" type="button">Business Login</a>
-                    </div> -->
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        <span id="user"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" >
+                        <a onclick="logout()" class="dropdown-item" type="button">logout</a>
+                    </div>
                 </div>
             </form>
         </div>
@@ -65,17 +55,35 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-action active">Product</li>
-                    <a href="b-dashboard-product-add-product.html">
-                        <li class="list-group-item list-group-item-action">Cart</li>
+                    <a href="customer-dashboard.html"> <li class="list-group-item list-group-item-action">
+                        Home
+                      </li></a> 
+                      <a href="c-dashboard-product.html">
+                        <li class="list-group-item list-group-item-action active">Product</li>
                     </a>
-                    <li class="list-group-item list-group-item-action">Profile</li>
-                    <li class="list-group-item list-group-item-action">Account</li>
+                    <a href="c-dashboard-cart.html">
+                        <li class="list-group-item list-group-item-action">orders <span class="badge badge-primary"
+                                id="orderLen"></span></li>
+                    </a>
+                    <a href="c-dashboard-account.html">
+
+                        <li class="list-group-item list-group-item-action">Account</li>
+                    </a>
                 </ul>
             </div>
             <div class="col-md-9">
                 <h2 class="text-center">Products</h2>
-                <div class="row justify-content-sm-around" id="cProduct">
+                <!-- <label for="type">Search by Type</label>
+                <select name="type" id="productCat">
+                    <option value="Ring">Ring</option>
+                    <option value="Chain">Chain</option>
+                    <option value="Bangle">Bangle</option>
+                    <option value="Pendent">Pendent</option>
+                    <option value="Braclet">Braclet</option>
+                    <option value="Others">others</option>
+                  </select> -->
+
+                <div class="row justify-content-sm-start" id="cProduct">
                     
                 </div>
 
@@ -94,7 +102,8 @@
         crossorigin="anonymous"></script>
     <!-- script  -->
     <script src="./script.js"></script>
-    <script src="./diplay-cart.js"></script>
+    <!-- <script src="./diplayProduct.js"></script> -->
+    <script src="./productDisplay.js"></script>
 </body>
 
 </html>

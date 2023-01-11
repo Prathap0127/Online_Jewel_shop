@@ -65,7 +65,8 @@
            <!-- content -->
             <div class="col-md-6">
                 <h2 class="text-center">Customer Login</h2>
-                <form id="login" onsubmit="loginUser(event)">
+                <!-- <form id="login" onsubmit="loginUser(event)"> -->
+                <form id="login" onsubmit="datalogin(event)">
                     <div class="form-group">
                       <label for="InputUserEmail">Email address</label>
                       <input type="email" class="form-control" id="InputUserEmail" aria-describedby="emailHelp">
@@ -91,7 +92,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <!-- script  -->
     <script src="./script.js"></script>
-    <script src="./login.js"></script>
+    <script src="./login-api.js"></script>
 </body>
 
 </html>

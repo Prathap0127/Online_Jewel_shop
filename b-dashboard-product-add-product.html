@@ -13,7 +13,7 @@
     <title>Online Jewel Shop</title>
 </head>
 
-<body>
+<body onload="onloadPage()">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Jewel Shop</a>
@@ -48,14 +48,12 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <div class="dropdown">
-                    <a class="btn btn-secondary" type="button" href="./index.html"
-                        aria-expanded="false">
-                        Logout
-                </a>
-                    <!-- <div class="dropdown-menu">
-                        <a href="./login.html" class="dropdown-item" type="button">Customer Login</a>
-                        <a href="./business_login.html" class="dropdown-item" type="button">Business Login</a>
-                    </div> -->
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        <span id="user"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" >
+                        <a onclick="logout()" class="dropdown-item" type="button">logout</a>
+                    </div>
                 </div>
             </form>
         </div>
@@ -66,17 +64,27 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item list-group-item-action">Product</li>
-                    <li class="list-group-item list-group-item-action active">Add Product</li>
-                    <li class="list-group-item list-group-item-action">Profile</li>
-                    <li class="list-group-item list-group-item-action">Account</li>
+                    <a href="admin-dash-board.html">
+                        <li class="list-group-item list-group-item-action">Home</li>
+                    </a>
+                    <a href="admin-dashboard-customer.html">
+                        <li class="list-group-item list-group-item-action">Registered Customer</li>
+                    </a>
+                    <a href="b-dashboard-product-add-product.html">
+                        <li class="list-group-item list-group-item-action active">Add Products </li>
+                    </a>
+                    <a href="b-dashboard-orders.html">
+                        <li class="list-group-item list-group-item-action">Orders </li>
+                    </a>
+                    <a href="b-dashboard-account.html">
+                        <li class="list-group-item list-group-item-action">Account</li>
+                    </a>
                 </ul>
             </div>
             <div class="col-md-9">
                 <h2 class="text-center">Add Products</h2>
                 <div class="formData">
                     <div class="form-row">
-                        <input type="text" class="form-control" id="productid" >
                         <div class="form-group col-md-4">
                             <label for="productName">Product Title</label>
                             <input type="text" class="form-control" id="productName" required>
@@ -146,6 +154,7 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <!-- script  -->
+    <script src="./script.js"></script>
     <script src="./product.js"></script>
 </body>
 

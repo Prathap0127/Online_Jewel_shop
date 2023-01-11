@@ -1,5 +1,5 @@
 //Product add to Mokapi
-let url = "https://6350def9dfe45bbd55b0529b.mockapi.io/product/"
+let url = "https://6350def9dfe45bbd55b0529b.mockapi.io/products/"
 
 var productMaterial = document.getElementById('productMaterial')
 var productCategory = document.getElementById('productCategory')
@@ -18,12 +18,12 @@ async function productData() {
             console.log("hai")
             console.log(productName.value)
             let newProductDetail = {
-                "name": productName.value,
-                "productType": productMaterial.value,
-                "productCat": productCategory.value,
-                "productPrice": productPrice.value,
-                "productActualPrice": productActualPrice.value,
-                "productURL": productURL.value,
+                productName: productName.value,
+                productType: productMaterial.value,
+                productCat: productCategory.value,
+                productPrice: productPrice.value,
+                productActualPrice: productActualPrice.value,
+                productURL: productURL.value,
             }
             let newProductData = await fetch(url, {
                 method: "POST",
@@ -61,18 +61,16 @@ async function getProductData() {
             var productDiv = document.getElementById('productDiv')
             var productCard = document.createElement('div')
             productCard.classList.add("card", "text-center", "m-3")
-            productCard.style.width = "13rem"
+            productCard.style.width = "12rem"
             productCard.innerHTML = `
             <img src="${product.productURL}" class="card-img-top" alt="...">
-            <span onclick="favIconColor(${product.id})"><i id="favIcon${product.id}" class="fa fa-heart"></i></span>
             <div class="card-body">
-                <p class="card-title">${product.name}</p>
+                <p class="card-title">${product.productName}</p>
                 <div class="d-flex justify-content-between">
                     <p class="card-text">Rs.${product.productPrice}</p>
                     <p class="card-text float-right"><small class="text-muted"><s>Rs.${product.productActualPrice}</s>
                         </small></p>
                 </div>
-                <a href="#" class="btn btn-outline-warning">Buy now</a> <br>
                 <a class="btn btn-outline-success" onclick="productUpdate(${product.id})" title="edit the Price"><i class="fa-solid fa-pen"></i></a>
                 <a class="btn btn-outline-danger" onclick="productDelete(${product.id})" title="To Delete Product"><i class="fa-solid fa-xmark"></i></a>
             </div>
@@ -95,7 +93,7 @@ async function productUpdate(id) {
     let updateRes = await pData.json()
     console.log(updateRes)
     //update the data from the card to text box to eadit the values
-    productName.value = updateRes.name;
+    productName.value = updateRes.productName;
     productMaterial.value = updateRes.productType
     productCategory.value = updateRes.productCat
     productPrice.value = updateRes.productPrice
@@ -106,6 +104,7 @@ async function productUpdate(id) {
 }
 
 async function updateProductDetail(id) {
+try{
 
     let updateProductDetail = {
         "name": productName.value,
@@ -121,28 +120,36 @@ async function updateProductDetail(id) {
         body: JSON.stringify(updateProductDetail)
     })
     let updateProduct = await updateProductdata.json()
-    alert("Product updated sucessfullya")
+    alert("Product updated sucessfully")
     console.log(updateProduct)
+}
+catch(err){
+    console.log(err)
+}
 }
 
 
 async function productDelete(id){
-   let userResponse= confirm("Are you Sure Delete the Product")
-   console.log(userResponse)
-   if(userResponse===true){
-       let productDeletedata=await fetch(url+id,{
-           method:"DELETE",
-           headers:{"Content-Type": "application/json"},
-           
-       })
+    try{
 
-       alert("Product deleted")
-       location.reload()
-
-   }
-   else{
-    return false
-   }
-    
+        let userResponse= confirm("Are you Sure Delete the Product")
+        console.log(userResponse)
+        if(userResponse===true){
+            let productDeletedata=await fetch(url+id,{
+                method:"DELETE",
+                headers:{"Content-Type": "application/json"},
+            })      
+     
+            alert("Product deleted")
+            location.reload()
+     
+        }
+        else{
+         return false
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
 
 }

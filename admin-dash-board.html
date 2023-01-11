@@ -29,16 +29,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="b-dashboard-product.html" role="button"
-                        data-toggle="dropdown" aria-expanded="false">
-                        Product
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="b-dashboard-product-add-product.html">Add Product</a>
-                        <a class="dropdown-item" href="b-dashboard-product.html">Product List</a>
-                        <!-- <div class="dropdown-divider"></div> -->
-                        <!-- <a class="dropdown-item" href="#">Something else here</a> -->
-                    </div>
+                    <a class="nav-link" href="#">Product</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -48,11 +39,10 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                         <span id="user"></span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-menu dropdown-menu-right" >
                         <a onclick="logout()" class="dropdown-item" type="button">logout</a>
                     </div>
                 </div>
@@ -65,35 +55,28 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="list-group list-group-flush">
-                    <a href="customer-dashboard.html">
-                        <li class="list-group-item list-group-item-action">
-                            Home
-                        </li>
+                    <a href="admin-dash-board.html">
+                        <li class="list-group-item list-group-item-action active">Home</li>
                     </a>
-                    <a href="c-dashboard-product.html">
-                        <li class="list-group-item list-group-item-action">
-                            Product
-                        </li>
+                    <a href="b-dashboard-product-add-product.html">
+                        <li class="list-group-item list-group-item-action">Add Products </li>
                     </a>
-                    <a href="c-dashboard-cart.html">
-                        <li class="list-group-item list-group-item-action active">orders <span class="badge badge-light"
-                                id="orderLen"></span></li>
+                    <a href="b-dashboard-orders.html">
+                        <li class="list-group-item list-group-item-action">Orders </li>
                     </a>
-                    <a href="c-dashboard-account.html">
-
+                    <a href="admin-dashboard-customer.html">
+                        <li class="list-group-item list-group-item-action">Registered Customer</li>
+                    </a>
+                    <a href="b-dashboard-account.html">
                         <li class="list-group-item list-group-item-action">Account</li>
                     </a>
                 </ul>
             </div>
             <div class="col-md-9">
-                <h2 class="text-center">Products</h2>
-                <div class="row justify-content-sm-start" id="orders">
-                </div>
-
-
-                <hr>
-
-
+                <h2 class="text-center">Dashboard</h2>
+                <!-- table data -->
+                <div id="dashboardCard"></div>
+              
             </div>
         </div>
 
@@ -109,8 +92,7 @@
         crossorigin="anonymous"></script>
     <!-- script  -->
     <script src="./script.js"></script>
-    <script src="./order.js"></script>
-
+    <script src="./dashboard.js"></script>
 </body>
 
 </html>

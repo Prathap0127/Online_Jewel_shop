@@ -6,19 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- custom style -->
     <link rel="stylesheet" href="./style.css">
     <title>Online Jewel Shop</title>
 </head>
+
 <body>
-     <!-- nav bar -->
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Jewel Shop</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -26,8 +29,8 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="b-dashboard-product.html" role="button" data-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="b-dashboard-product.html" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
                         Product
                     </a>
                     <div class="dropdown-menu">
@@ -56,58 +59,69 @@
                 </div>
             </form>
         </div>
-      </nav>
+    </nav>
     <!-- nav bar end -->
     <div class="container-fluid">
         <div class="row justify-content-center mt-2">
             <!-- left side input form -->
             <div class="col-md-6">
                 <h2 class="text-center">Business Register</h2>
-                <form action=""  method="get" id="b_registerForm">
-                        <div class="form-group">
-                            <label for="name">Name of Shop</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name / User name"
-                                value="">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Id</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                 
-                    <div class="form-row">
-                        <div class="form-group col-6">
-                            <label for="inputAddress">Phone Number</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="+91-1234567890">
-                        </div>
-                        <div class="form-group col-6">
-                            <label for="inputAddress">GST / TIN</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Ex: DGHATS87565JHH">
-                        </div>
-                    </div>
-                    
+                <form onsubmit="bRegister(event)" method="post" id="b_registerForm">
                     <div class="form-group">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <label for="name">Name of Shop</label>
+                        <input type="text" class="form-control" id="shopName" placeholder="Shop Name / user name"
+                            value="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Id</label>
+                        <input type="email" class="form-control" id="shopEmail" placeholder="Email" required>
+                    </div>
+                    <!-- password -->
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="shopPassword">Password</label>
+                            <input type="password" class="form-control" id="shopPassword">
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="shopConfirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="shopConfirmPassword">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="shopPhone">Phone Number</label>
+                            <input type="text" class="form-control" id="shopPhone" placeholder="9234567890" required />
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="inputGST">GST</label>
+                            <input type="text" class="form-control" id="inputGST" placeholder="Ex: DGHATS87565JHH">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shopAddress">Address</label>
+                        <input type="text" class="form-control" id="shopAddress" placeholder="1234 Main St">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <label for="shopCity">City</label>
+                            <input type="text" class="form-control" id="shopCity">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPin">Pincode</label>
-                            <input type="text" class="form-control" id="inputPin">
+                            <label for="shopPin">Pincode</label>
+                            <input type="text" class="form-control" id="shopPin">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputState">State</label>
-                            <input type="text" class="form-control" name="state" id="inputState">
+                            <label for="shopState">State</label>
+                            <input type="text" class="form-control" name="state" id="shopState">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputCountry">Country</label>
-                            <select id="inputCountry" class="form-control">
+                            <label for="shopCountry">Country</label>
+                            <select id="shopCountry" class="form-control">
                                 <option selected>Choose...</option>
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Albania">Albania</option>
@@ -354,22 +368,27 @@
                             </select>
                         </div>
                     </div>
-                        <div class="form-group">
-                            <label for="description">Shop description</label>
-                            <textarea class="form-control" id="description" rows="3"></textarea>
-                          </div>
+                    <div class="form-group">
+                        <label for="description">Shop description</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
                     <button type="submit" class="btn btn-primary">Register</button>
                 </form>
             </div>
             <!--  left side input form end -->
-           
+
         </div>
     </div>
     <!-- bootstrap script -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
     <!-- script  -->
     <script src="./script.js"></script>
+    <script src="./bRegister.js"></script>
 </body>
 
 </html>

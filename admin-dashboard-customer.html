@@ -29,8 +29,8 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="b-dashboard-product.html" role="button"
-                        data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
                         Product
                     </a>
                     <div class="dropdown-menu">
@@ -48,11 +48,10 @@
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
                         <span id="user"></span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-menu dropdown-menu-right" >
                         <a onclick="logout()" class="dropdown-item" type="button">logout</a>
                     </div>
                 </div>
@@ -65,34 +64,51 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="list-group list-group-flush">
-                    <a href="customer-dashboard.html">
-                        <li class="list-group-item list-group-item-action">
-                            Home
-                        </li>
+                    <a href="admin-dash-board.html">
+                        <li class="list-group-item list-group-item-action">Home</li>
                     </a>
-                    <a href="c-dashboard-product.html">
-                        <li class="list-group-item list-group-item-action">
-                            Product
-                        </li>
+                    <a href="b-dashboard-product-add-product.html">
+                        <li class="list-group-item list-group-item-action">Add Products </li>
                     </a>
-                    <a href="c-dashboard-cart.html">
-                        <li class="list-group-item list-group-item-action active">orders <span class="badge badge-light"
-                                id="orderLen"></span></li>
+                    <a href="b-dashboard-orders.html">
+                        <li class="list-group-item list-group-item-action">Orders </li>
                     </a>
-                    <a href="c-dashboard-account.html">
-
+                    <a href="admin-dashboard-customer.html">
+                        <li class="list-group-item list-group-item-action active">Registered Customer</li>
+                    </a>
+                    <a href="b-dashboard-account.html">
                         <li class="list-group-item list-group-item-action">Account</li>
                     </a>
                 </ul>
             </div>
             <div class="col-md-9">
-                <h2 class="text-center">Products</h2>
-                <div class="row justify-content-sm-start" id="orders">
-                </div>
-
-
-                <hr>
-
+                <h2 class="text-center">Registered Customer</h2>
+                <!-- table data -->
+                <table class="table table-responsive" id="customer_data">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Aadhaar / PAN</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                </table>
+<!-- pagenation -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-end" id="pageNumber">
+                        <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                    </ul>
+                </nav>
 
             </div>
         </div>
@@ -109,8 +125,7 @@
         crossorigin="anonymous"></script>
     <!-- script  -->
     <script src="./script.js"></script>
-    <script src="./order.js"></script>
-
+    <script src="./customerRegister.js"></script>
 </body>
 
 </html>

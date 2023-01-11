@@ -13,7 +13,7 @@
     <title>Online Jewel Shop</title>
 </head>
 
-<body>
+<body onload="onloadPage()">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Jewel Shop</a>
@@ -29,8 +29,8 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="b-dashboard-product.html" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
                         Product
                     </a>
                     <div class="dropdown-menu">
@@ -50,95 +50,94 @@
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
                         aria-expanded="false">
-                        Login
+                        <span id="user"></span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="./login.html" class="dropdown-item" type="button">Customer Login</a>
-                        <a href="./business_login.html" class="dropdown-item" type="button">Business Login</a>
+                        <a onclick="logout()" class="dropdown-item" type="button">logout</a>
                     </div>
                 </div>
             </form>
         </div>
     </nav>
     <!-- nav bar end -->
-    <div class="container-fluid">
-        <div class="row justify-content-center mt-2">
-            <!-- left side input form -->
-            <div class="col-md-6">
-                <h2 class="text-center">Customer Register</h2>
-                <form onsubmit="customerRegister(event)" method="post" id="registerForm">
-                    <div class="form-group">
-                        <label for="customerName">Name </label>
-                        <input type="text" class="form-control" id="customerName" placeholder="Name / User name"
-                            value="" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="customerEmail">Email Id</label>
-                        <input type="email" class="form-control" id="customerEmail" placeholder="Email" required>
-                    </div>
-                    <!-- password -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="list-group list-group-flush">
+                    <a href="customer-dashboard.html">
+                        <li class="list-group-item list-group-item-action">
+                            Home
+                        </li>
+                    </a>
+                    <a href="c-dashboard-product.html">
+                        <li class="list-group-item list-group-item-action">
+                            Product
+                        </li>
+                    </a>
+                    <a href="c-dashboard-cart.html">
+                        <li class="list-group-item list-group-item-action active">orders <span class="badge badge-light"
+                                id="orderLen"></span></li>
+                    </a>
+                    <li class="list-group-item list-group-item-action active">Account</li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <h2 class="text-center">Account</h2>
+                <!-- left side input form -->
+                <div id="profileForm">
                     <div class="form-row">
                         <div class="form-group col-6">
-                            <label for="customerPassword">Password</label>
-                            <input type="password" class="form-control" id="customerPassword">
+                            <label for="customerName">Name </label>
+                            <input type="text" class="form-control" id="customerName" placeholder="Name / User name"
+                                value="">
                         </div>
+
                         <div class="form-group col-6">
-                            <label for="customerConfirmPassword">Confirm Password</label>
-                            <input type="password" class="form-control" id="customerConfirmPassword">
+                            <label for="customerEmail">Email Id</label>
+                            <input type="email" class="form-control" id="customerEmail" placeholder="Email" disabled>
                         </div>
+
                     </div>
                     <!-- gender -->
                     <div class="form-row">
-                        <label>Gender : &nbsp;</label>
-                        <div class="form-group">
-    
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="gender_male" value="male">
-                                <label class="form-check-label" for="gender_male">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="gender_female"
-                                    value="female">
-                                <label class="form-check-label" for="gender_female">Female</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="gender_other" value="other">
-                                <label class="form-check-label" for="gender_other">Other</label>
-                            </div>
+                        <div class="form-group col-3">
+                            <label for="Gender">Gender</label>
+                            <input type="text" class="form-control" id="gender">
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-6">
+
+                        <div class="form-group col-4">
                             <label for="customerPhone">Phone Number</label>
-                            <input type="text" class="form-control" id="customerPhone" placeholder="1234567890" required>
+                            <input type="text" class="form-control" id="customerPhone" placeholder="1234567890"
+                                required>
                         </div>
-                        <div class="form-group col-6">
+                        <div class="form-group col-5">
                             <label for="customerAadhaarPan">Aadhaar Number</label>
-                            <input type="text" class="form-control" id="customerAadhaar" placeholder="23xx 12xx xxx" required>
+                            <input type="text" class="form-control" id="customerAadhaar" placeholder="23xx 12xx xxx"
+                                disabled>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="customerAddress">Address</label>
-                        <input type="text" class="form-control" id="customerAddress" placeholder="1234 Main St" required>
+                        <input type="text" class="form-control" id="customerAddress" placeholder="1234 Main St"
+                            required>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label for="customerCity">City</label>
                             <input type="text" class="form-control" id="customerCity" required>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label for="customerAddPin">Pincode</label>
                             <input type="text" class="form-control" id="customerAddPin" required>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+
+                        <div class="form-group col-md-3">
                             <label for="customerState">State</label>
                             <input type="text" class="form-control" name="state" id="customerState" required>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label for="customerCountry">Country</label>
                             <select id="customerCountry" class="form-control">
                                 <option selected>Choose...</option>
@@ -387,22 +386,28 @@
                             </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </form>
+                    <button type="submit" class="btn btn-primary"
+                        onclick="updateCustomerDetail(userid)">update</button>
+                    </>
+                    <!--  left side input form end -->
+                    <hr>
+                </div>
             </div>
-            <!--  left side input form end -->
 
         </div>
-    </div>
-    <!-- bootstrap script -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
-    <!-- script  -->
-    <script src="./customerRegister.js"></script>
+
+
+        <!-- bootstrap script -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+        <!-- script  -->
+        <script src="./script.js"></script>
+        <script src="./account.js"></script>
+
 </body>
 
 </html>
